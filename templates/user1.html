@@ -1,0 +1,13 @@
+{% extends "navigator.html" %}
+{% block title %}Flasky{% endblock %}
+{% block navbar %}
+{{super()}}
+{% endblock %}
+{% block content %}
+{{super()}}
+<div class="container">
+ <div class="page-header">
+   <h1>Привет, {{ name }}!</h1>
+ </div>
+  </div>
+{% endblock %}

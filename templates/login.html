@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "navigator.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Simple Chat - Login{% endblock %}
+{% block html_attribs %} lang="ru"{% endblock %}
+{% block navbar %}
+    {{super()}}
+{% endblock %}
+
+{% block content %}
+{{super()}}
+  <h1>Вход</h1>
+  {{ wtf.quick_form(form) }}
+    <h3 style="color:red">{% if not_found%}имя не найдено{% else %}{%endif%}</h3>
+    <h3 style="color:red">{% if wrong_pass%}Неверный пароль{% else %}{%endif%}</h3>
+{% endblock %}

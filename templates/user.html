@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Site</title>
+</head>
+<body>
+    {% if user %}
+        <h1>Hello, {{ user }}!</h1>
+    {% else %}
+        <h1>Hello, Stranger!</h1>
+    {% endif %}
+    <h2>Наши участники:</h2>
+    {%for user in users.keys()%}
+        <li>{{users[user]}}</li>
+    {%endfor%}
+    {% block body %}
+    123 тест
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<html>
+<head>
+<body style="background-color: red;">
+
+    {% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <a class="btn btn-link btn-lg" type="button" href="/">
+                <span class="navbar-toggler-icon"></span>
+                Домашняя страница
+            </a>
+            <a class="btn btn-link btn-lg" type="button" href="/user/{{session_name}}">
+                <span class="navbar-toggler-icon"></span>
+                Мой профиль
+            </a>
+            <div class="navbar-header">
+                <span  class="navbar-brand">ПРОСТОЙ Il||lI ЧАТ</span >
+            </div>
+            <a class="btn btn-link btn-lg " type="button" href="/register">
+                <span class="navbar-toggler-icon"></span>
+                Регистрация
+            </a>
+            {% if session_name%}
+            <a class="btn btn-link btn-lg" type="button" href="/out">
+                <span class="navbar-toggler-icon"></span>
+                Выйти
+            </a>
+            {%else%}
+            <a class="btn btn-link btn-lg" type="button" href="/login">
+                <span class="navbar-toggler-icon"></span>
+                Войти
+            </a>
+            {%endif%}
+        </div>
+    </nav>
+    {% endblock %}
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- Здесь можете подключить скрипты и стили, если это необходимо -->
+</body>
+</html>
