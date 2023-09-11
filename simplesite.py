@@ -6,7 +6,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 #для тестирования
-user_dict = {"mary sue": "123", "admin": "123", "wanderer": "123"}
+user_dict = {}
 chat = []
 
 app = Flask(__name__)
